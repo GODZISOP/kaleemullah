@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import { categories, products } from './data/products';
 import { siteConfig } from './data/siteConfig';
-import logoImg from './images/amyazlaan-logo.svg';
+import logoImg from './images/kaleemullah-logo.svg';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -25,7 +25,7 @@ export default function App() {
   // Cart & Product Detail state
   const [cart, setCart] = useState(() => {
     try {
-      const saved = localStorage.getItem('amyazlaan_cart');
+      const saved = localStorage.getItem('kaleemullah_cart');
       return saved ? JSON.parse(saved) : [];
     } catch (e) {
       return [];
@@ -58,7 +58,7 @@ export default function App() {
   // Sync cart to localStorage
   useEffect(() => {
     try {
-      localStorage.setItem('amyazlaan_cart', JSON.stringify(cart));
+      localStorage.setItem('kaleemullah_cart', JSON.stringify(cart));
     } catch (e) {}
   }, [cart]);
 
@@ -603,7 +603,7 @@ export default function App() {
             </div>
           </section>
 
-          {/* THE AMY AZLAAN LLC DISTINCTION EXPERIENCE (BENTO SHOWPIECE) */}
+          {/* THE KALEEMULLAH LLC DISTINCTION EXPERIENCE (BENTO SHOWPIECE) */}
           <section className="hf-experience-section">
             <div className="section-wrapper">
               <div className="section-header-center">
@@ -774,7 +774,7 @@ export default function App() {
             </div>
           </section>
 
-          {/* SECTION: CONTACT AMY AZLAAN LLC (ON HOME PAGE) */}
+          {/* SECTION: CONTACT KALEEMULLAH LLC (ON HOME PAGE) */}
           <section id="contact-section" className="section-wrapper" style={{ padding: '60px 24px 70px' }}>
             <div style={{ maxWidth: '980px', margin: '0 auto' }}>
               <div className="section-header-center">
@@ -1862,6 +1862,13 @@ export default function App() {
                   {siteConfig.phoneDirect}
                 </a>
               </li>
+              {siteConfig.website && (
+                <li>
+                  <a href={`https://${siteConfig.website.replace(/^https?:\/\//, "")}`} target="_blank" rel="noreferrer">
+                    {siteConfig.website}
+                  </a>
+                </li>
+              )}
             </ul>
 
             <h4 style={{ marginTop: '16px' }}>Socials</h4>
