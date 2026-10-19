@@ -117,11 +117,11 @@ export const siteConfig = {
 
   // 🎨 Website Color Theme (Hex codes)
   theme: {
-    primaryNavy:   "#091526",
-    secondaryTeal: "#112a45",
-    accentTeal:    "#d97706",
-    accentHover:   "#b45309",
-    accentGold:    "#d97706",
-    bgLight:       "#fcfbf9"
+    primaryNavy:   "#0a192f",
+    secondaryTeal: "#1e3a8a",
+    accentTeal:    "#2563eb",
+    accentHover:   "#1d4ed8",
+    accentGold:    "#2563eb",
+    bgLight:       "#f8fafc"
   }
 };

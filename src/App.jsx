@@ -43,8 +43,18 @@ export default function App() {
       const root = document.documentElement;
       if (siteConfig.theme.primaryNavy) root.style.setProperty('--primary-navy', siteConfig.theme.primaryNavy);
       if (siteConfig.theme.secondaryTeal) root.style.setProperty('--secondary-teal', siteConfig.theme.secondaryTeal);
-      if (siteConfig.theme.accentTeal) root.style.setProperty('--accent-teal', siteConfig.theme.accentTeal);
-      if (siteConfig.theme.accentHover) root.style.setProperty('--accent-teal-hover', siteConfig.theme.accentHover);
+      const accent = siteConfig.theme.accentTeal || siteConfig.theme.accentGold;
+      if (accent) {
+        root.style.setProperty('--accent-teal', accent);
+        root.style.setProperty('--accent-brown', accent);
+      }
+      if (siteConfig.theme.accentHover) {
+        root.style.setProperty('--accent-teal-hover', siteConfig.theme.accentHover);
+        root.style.setProperty('--accent-brown-hover', siteConfig.theme.accentHover);
+      }
+      if (siteConfig.theme.bgLight) {
+        root.style.setProperty('--bg-light', siteConfig.theme.bgLight);
+      }
     }
     if (siteConfig.companyName) {
       document.title = siteConfig.companyName + (siteConfig.tagline ? ' | ' + siteConfig.tagline : '');
@@ -198,7 +208,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f5f7f9] text-[#1e293b]">
+    <div className="min-h-screen bg-[#f8fafc] text-[#1e293b]">
       {/* 2-TIER MODERN STICKY HEADER */}
       <header className="site-header">
         {/* UPPER TIER: MAIN NAVIGATION */}
@@ -641,7 +651,7 @@ export default function App() {
                 {/* Bento Card 2: Priority Express Dispatch */}
                 <div className="hf-bento-card hf-bento-feature">
                   <div className="hf-bento-icon-box">
-                    <Truck size={24} color="#c59b3f" />
+                    <Truck size={24} color="var(--accent-teal)" />
                   </div>
                   <h3 className="hf-bento-feature-title">Insured Express Dispatch</h3>
                   <p className="hf-bento-feature-desc">
@@ -656,7 +666,7 @@ export default function App() {
                 {/* Bento Card 3: Quality Guarantee */}
                 <div className="hf-bento-card hf-bento-feature">
                   <div className="hf-bento-icon-box">
-                    <ShieldCheck size={24} color="#c59b3f" />
+                    <ShieldCheck size={24} color="var(--accent-teal)" />
                   </div>
                   <h3 className="hf-bento-feature-title">100% Quality Guaranteed</h3>
                   <p className="hf-bento-feature-desc">
@@ -671,7 +681,7 @@ export default function App() {
                 {/* Bento Card 4: Executive Customer Desk */}
                 <div className="hf-bento-card hf-bento-feature hf-bento-wide">
                   <div className="hf-bento-icon-box">
-                    <Phone size={24} color="#c59b3f" />
+                    <Phone size={24} color="var(--accent-teal)" />
                   </div>
                   <div style={{ flex: 1 }}>
                     <h3 className="hf-bento-feature-title">Direct Concierge & Trade Desk</h3>
@@ -701,7 +711,7 @@ export default function App() {
                   <div className="hf-testimonial-card">
                     <div className="hf-stars-row">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={15} fill="#c59b3f" color="#c59b3f" />
+                        <Star key={i} size={15} fill="var(--accent-teal)" color="var(--accent-teal)" />
                       ))}
                     </div>
                     <p className="hf-testimonial-quote">
@@ -716,7 +726,7 @@ export default function App() {
                   <div className="hf-testimonial-card">
                     <div className="hf-stars-row">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={15} fill="#c59b3f" color="#c59b3f" />
+                        <Star key={i} size={15} fill="var(--accent-teal)" color="var(--accent-teal)" />
                       ))}
                     </div>
                     <p className="hf-testimonial-quote">
@@ -731,7 +741,7 @@ export default function App() {
                   <div className="hf-testimonial-card">
                     <div className="hf-stars-row">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={15} fill="#c59b3f" color="#c59b3f" />
+                        <Star key={i} size={15} fill="var(--accent-teal)" color="var(--accent-teal)" />
                       ))}
                     </div>
                     <p className="hf-testimonial-quote">
@@ -788,15 +798,15 @@ export default function App() {
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.25fr', gap: '32px', marginTop: '40px' }} className="contact-grid-responsive">
-                <div style={{ background: '#241b14', color: '#fff', padding: '36px', borderRadius: '20px', border: '1px solid rgba(140, 95, 36, 0.3)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div style={{ background: 'var(--primary-navy)', color: '#fff', padding: '36px', borderRadius: '20px', border: '1px solid rgba(140, 95, 36, 0.3)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                   <div>
-                    <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', marginBottom: '20px', color: '#f5efe6' }}>Direct Coordinates</h3>
+                    <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', marginBottom: '20px', color: '#ffffff' }}>Direct Coordinates</h3>
                     
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', fontSize: '0.95rem' }}>
                       <div style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                        <Mail size={20} color="#c59b3f" style={{ marginTop: '2px', flexShrink: 0 }} />
+                        <Mail size={20} color="var(--accent-teal)" style={{ marginTop: '2px', flexShrink: 0 }} />
                         <div>
-                          <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Email</div>
+                          <div style={{ color: '#94a3b8', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Email</div>
                           <a href={`mailto:${siteConfig.email}`} style={{ color: '#fff', textDecoration: 'none', fontWeight: '600' }}>
                             {siteConfig.email}
                           </a>
@@ -804,17 +814,17 @@ export default function App() {
                       </div>
 
                       <div style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                        <Phone size={20} color="#c59b3f" style={{ marginTop: '2px', flexShrink: 0 }} />
+                        <Phone size={20} color="var(--accent-teal)" style={{ marginTop: '2px', flexShrink: 0 }} />
                         <div>
-                          <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Phone Number</div>
+                          <div style={{ color: '#94a3b8', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Phone Number</div>
                           <div>Direct: <a href={`tel:${siteConfig.phoneDirectTel}`} style={{ color: '#fff', textDecoration: 'none' }}>{siteConfig.phoneDirect}</a></div>
                         </div>
                       </div>
 
                       <div style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                        <MapPin size={20} color="#c59b3f" style={{ marginTop: '2px', flexShrink: 0 }} />
+                        <MapPin size={20} color="var(--accent-teal)" style={{ marginTop: '2px', flexShrink: 0 }} />
                         <div>
-                          <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Operating Trade Hub</div>
+                          <div style={{ color: '#94a3b8', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Operating Trade Hub</div>
                           <div style={{ color: '#fff', fontWeight: '600' }}>{siteConfig.address.line1}</div>
                           <div style={{ color: '#cbd5e1' }}>{siteConfig.address.line2}</div>
                         </div>
@@ -823,7 +833,7 @@ export default function App() {
                       <div style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
                         <MessageSquare size={20} color="#25d366" style={{ marginTop: '2px', flexShrink: 0 }} />
                         <div>
-                          <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>WhatsApp Direct</div>
+                          <div style={{ color: '#94a3b8', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>WhatsApp Direct</div>
                           <a 
                             href={`https://wa.me/${siteConfig.whatsappNumber}`} 
                             target="_blank" 
@@ -837,13 +847,13 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div style={{ marginTop: '28px', paddingTop: '18px', borderTop: '1px solid rgba(255,255,255,0.1)', fontSize: '0.85rem', color: '#b8aba0' }}>
+                  <div style={{ marginTop: '28px', paddingTop: '18px', borderTop: '1px solid rgba(255,255,255,0.1)', fontSize: '0.85rem', color: '#94a3b8' }}>
                     Managed by <strong>{siteConfig.companyName}</strong> • Global Distribution Hub
                   </div>
                 </div>
 
                 <div style={{ background: '#fff', padding: '36px', borderRadius: '20px', border: '1px solid #eae2d6', boxShadow: '0 4px 16px rgba(0,0,0,0.03)' }}>
-                  <h3 style={{ fontSize: '1.25rem', marginBottom: '18px', color: '#241b14', fontWeight: '700' }}>Send Us a Message</h3>
+                  <h3 style={{ fontSize: '1.25rem', marginBottom: '18px', color: 'var(--primary-navy)', fontWeight: '700' }}>Send Us a Message</h3>
                   <form onSubmit={handleFormSubmit} className="modal-form">
                     <div className="form-group">
                       <label className="form-label">Full Name *</label>
@@ -864,7 +874,7 @@ export default function App() {
                     <button 
                       type="submit" 
                       className="btn-submit-modal"
-                      style={{ background: 'linear-gradient(135deg, #a67635 0%, #8c5f24 100%)', color: '#fff', fontWeight: '700' }}
+                      style={{ background: 'linear-gradient(135deg, var(--accent-teal-hover) 0%, #8c5f24 100%)', color: '#fff', fontWeight: '700' }}
                     >
                       Send Message
                     </button>
@@ -1439,15 +1449,15 @@ export default function App() {
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px', margin: '36px 0' }}>
               <div style={{ background: '#f8fafc', padding: '20px', borderRadius: '14px', border: '1px solid #e2e8f0' }}>
-                <h3 style={{ color: '#102a3a', fontSize: '1.1rem', marginBottom: '8px' }}>Integrity First</h3>
+                <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.1rem', marginBottom: '8px' }}>Integrity First</h3>
                 <p style={{ color: '#64748b', fontSize: '0.9rem' }}>Transparent pricing, transparent communication, and verified product authenticity.</p>
               </div>
               <div style={{ background: '#f8fafc', padding: '20px', borderRadius: '14px', border: '1px solid #e2e8f0' }}>
-                <h3 style={{ color: '#102a3a', fontSize: '1.1rem', marginBottom: '8px' }}>Logistics Agility</h3>
+                <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.1rem', marginBottom: '8px' }}>Logistics Agility</h3>
                 <p style={{ color: '#64748b', fontSize: '0.9rem' }}>Fast customs turnaround, reliable carrier contracts, and multi-hub fulfillment.</p>
               </div>
               <div style={{ background: '#f8fafc', padding: '20px', borderRadius: '14px', border: '1px solid #e2e8f0' }}>
-                <h3 style={{ color: '#102a3a', fontSize: '1.1rem', marginBottom: '8px' }}>Partner Centric</h3>
+                <h3 style={{ color: 'var(--primary-navy)', fontSize: '1.1rem', marginBottom: '8px' }}>Partner Centric</h3>
                 <p style={{ color: '#64748b', fontSize: '0.9rem' }}>Dedicated trade managers ready to accommodate customer requirements and custom schedules.</p>
               </div>
             </div>
@@ -1496,7 +1506,7 @@ export default function App() {
               </div>
             </div>
 
-            <div style={{ marginTop: '40px', background: '#102a3a', color: '#fff', padding: '36px', borderRadius: '20px', textAlign: 'center' }}>
+            <div style={{ marginTop: '40px', background: 'var(--primary-navy)', color: '#fff', padding: '36px', borderRadius: '20px', textAlign: 'center' }}>
               <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', marginBottom: '12px' }}>Ready to Scale Your Inventory?</h2>
               <p style={{ color: '#cbd5e1', maxWidth: '600px', margin: '0 auto 24px' }}>
                 Let us build a customized supply plan tailored to your volume requirements and distribution schedule.
@@ -1633,7 +1643,7 @@ export default function App() {
 
             {/* Quick Contact Info Strip with exact address and phone */}
             <div style={{
-              background: '#102a3a',
+              background: 'var(--primary-navy)',
               color: '#ffffff',
               padding: '24px 30px',
               borderRadius: '16px',
@@ -1664,7 +1674,7 @@ export default function App() {
 
             <div style={{ background: '#fff', padding: '40px', borderRadius: '24px', border: '1px solid #e2e8f0' }}>
               <div style={{ marginBottom: '24px', borderLeft: '4px solid #1e7087', paddingLeft: '16px' }}>
-                <h3 style={{ fontSize: '1.25rem', color: '#102a3a', marginBottom: '8px' }}>Supplier Inquiries</h3>
+                <h3 style={{ fontSize: '1.25rem', color: 'var(--primary-navy)', marginBottom: '8px' }}>Supplier Inquiries</h3>
                 <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: '1.6' }}>
                   Tell us about your business and the products you’re looking to source. Share product details, brand information, and your preferred order quantities. Our team will review your inquiry and follow up about potential next steps.
                 </p>
@@ -1731,14 +1741,14 @@ export default function App() {
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '32px', marginTop: '40px' }}>
-              <div style={{ background: '#241b14', color: '#fff', padding: '36px', borderRadius: '20px', border: '1px solid rgba(140, 95, 36, 0.3)' }}>
-                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', marginBottom: '16px', color: '#f5efe6' }}>Direct Coordinates</h3>
+              <div style={{ background: 'var(--primary-navy)', color: '#fff', padding: '36px', borderRadius: '20px', border: '1px solid rgba(140, 95, 36, 0.3)' }}>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', marginBottom: '16px', color: '#ffffff' }}>Direct Coordinates</h3>
                 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', fontSize: '0.95rem' }}>
                   <div style={{ display: 'flex', gap: '12px' }}>
-                    <Mail size={20} color="#c59b3f" />
+                    <Mail size={20} color="var(--accent-teal)" />
                     <div>
-                      <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Email</div>
+                      <div style={{ color: '#94a3b8', fontSize: '0.8rem', textTransform: 'uppercase' }}>Email</div>
                       <a href={`mailto:${siteConfig.email}`} style={{ color: '#fff', textDecoration: 'none', fontWeight: '600' }}>
                         {siteConfig.email}
                       </a>
@@ -1746,17 +1756,17 @@ export default function App() {
                   </div>
 
                   <div style={{ display: 'flex', gap: '12px' }}>
-                    <Phone size={20} color="#c59b3f" />
+                    <Phone size={20} color="var(--accent-teal)" />
                     <div>
-                      <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Phone Number</div>
+                      <div style={{ color: '#94a3b8', fontSize: '0.8rem', textTransform: 'uppercase' }}>Phone Number</div>
                       <div>Direct: <a href={`tel:${siteConfig.phoneDirectTel}`} style={{ color: '#fff' }}>{siteConfig.phoneDirect}</a></div>
                     </div>
                   </div>
 
                   <div style={{ display: 'flex', gap: '12px' }}>
-                    <MapPin size={20} color="#c59b3f" />
+                    <MapPin size={20} color="var(--accent-teal)" />
                     <div>
-                      <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Operating Trade Hub</div>
+                      <div style={{ color: '#94a3b8', fontSize: '0.8rem', textTransform: 'uppercase' }}>Operating Trade Hub</div>
                       <div style={{ color: '#fff', fontWeight: '600' }}>Global Distribution Trade Desk</div>
                       <div style={{ color: '#cbd5e1' }}>Middle East & North America Logistics</div>
                     </div>
@@ -1765,7 +1775,7 @@ export default function App() {
                   <div style={{ display: 'flex', gap: '12px' }}>
                     <MessageSquare size={20} color="#25d366" />
                     <div>
-                      <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>WhatsApp Chat</div>
+                      <div style={{ color: '#94a3b8', fontSize: '0.8rem', textTransform: 'uppercase' }}>WhatsApp Chat</div>
                       <a 
                         href={`https://wa.me/${siteConfig.whatsappNumber}`} 
                         target="_blank" 
@@ -1778,11 +1788,11 @@ export default function App() {
                   </div>
 
                   <div style={{ display: 'flex', gap: '12px' }}>
-                    <Building2 size={20} color="#c59b3f" />
+                    <Building2 size={20} color="var(--accent-teal)" />
                     <div>
-                      <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Management</div>
+                      <div style={{ color: '#94a3b8', fontSize: '0.8rem', textTransform: 'uppercase' }}>Management</div>
                       <div style={{ color: '#fff' }}>{siteConfig.companyName}</div>
-                      <div style={{ color: '#b8aba0', fontSize: '0.85rem' }}>Management & Operations</div>
+                      <div style={{ color: '#94a3b8', fontSize: '0.85rem' }}>Management & Operations</div>
                     </div>
                   </div>
                 </div>
@@ -1905,7 +1915,7 @@ export default function App() {
               <button 
                 type="submit" 
                 style={{
-                  background: 'linear-gradient(135deg, #d4af37 0%, #c59b3f 100%)',
+                  background: 'linear-gradient(135deg, #d4af37 0%, var(--accent-teal) 100%)',
                   color: '#0c2338',
                   padding: '12px',
                   borderRadius: '6px',

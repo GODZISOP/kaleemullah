@@ -5,7 +5,7 @@ export const categories = [
     description: 'Artisan cast iron cookware, natural bamboo mist diffusers, and curated residential lifestyle hardware.',
     buttonText: 'Shop Home & Living',
     link: '#',
-    image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80',
     itemCount: 2
   },
   {
@@ -14,7 +14,7 @@ export const categories = [
     description: 'Dermatologist-grade botanical oils, royal ambergris perfumes, and bespoke grooming rituals.',
     buttonText: 'Shop Personal Care',
     link: '#',
-    image: 'https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=800&q=80',
     itemCount: 2
   },
   {
@@ -23,7 +23,7 @@ export const categories = [
     description: 'High-power GaN fast charging stations, rugged outdoor Bluetooth speakers, and modern consumer tech.',
     buttonText: 'Shop Electronics',
     link: '#',
-    image: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=800&q=80',
     itemCount: 2
   },
   {
@@ -32,7 +32,7 @@ export const categories = [
     description: 'Royal Kashmiri Grade A+ saffron threads, single-estate raw Acacia honey with fresh honeycomb.',
     buttonText: 'Shop Gourmet',
     link: '#',
-    image: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80',
     itemCount: 2
   }
 ];
