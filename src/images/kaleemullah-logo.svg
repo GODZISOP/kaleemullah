@@ -1,83 +1,45 @@
-﻿<svg xmlns=http://www.w3.org/2000/svg viewBox=0 0 420 290 fill=none>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70" fill="none">
   <defs>
-    <linearGradient id=kGold x1=0% y1=0% x2=100% y2=100%>
-      <stop offset=0% stop-color=#fbbf24 />
-      <stop offset=45% stop-color=#d97706 />
-      <stop offset=100% stop-color=#92400e />
+    <linearGradient id="kGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="50%" stop-color="#d97706" />
+      <stop offset="100%" stop-color="#92400e" />
     </linearGradient>
-    <linearGradient id=kNavy x1=0% y1=0% x2=100% y2=100%>
-      <stop offset=0% stop-color=#1e3a8a />
-      <stop offset=50% stop-color=#091526 />
-      <stop offset=100% stop-color=#020617 />
+    <linearGradient id="kNavyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#091526" />
     </linearGradient>
-    <linearGradient id=kAccent x1=0% y1=100% x2=100% y2=0%>
-      <stop offset=0% stop-color=#f59e0b />
-      <stop offset=50% stop-color=#eab308 />
-      <stop offset=100% stop-color=#fef08a />
-    </linearGradient>
-    <filter id=kShadow x=-10% y=-10% width=120% height=120%>
-      <feDropShadow dx=0 dy=4 stdDeviation=6 flood-color=#020617 flood-opacity=0.25 />
+    <filter id="kCrestShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.25" />
     </filter>
   </defs>
 
-  <!-- Luxury Emblem Graphic -->
-  <g transform=translate(65, 14) filter=url(#kShadow)>
-    <!-- Shield / Diamond Crest Outer Frame -->
-    <path d=M 145 8 L 248 42 L 248 138 L 145 186 L 42 138 L 42 42 Z 
-          fill=url(#kNavy) 
-          stroke=url(#kGold) 
-          stroke-width=3.5 
-          stroke-linejoin=round/>
+  <!-- Emblem Shield Crest -->
+  <g filter="url(#kCrestShadow)">
+    <!-- Outer Shield Frame -->
+    <path d="M 35 4 L 62 16 L 62 48 L 35 64 L 8 48 L 8 16 Z" 
+          fill="url(#kNavyGrad)" 
+          stroke="url(#kGoldGrad)" 
+          stroke-width="3" 
+          stroke-linejoin="round"/>
     
     <!-- Inner Accent Inset -->
-    <path d=M 145 18 L 236 48 L 236 132 L 145 174 L 54 132 L 54 48 Z 
-          fill=none 
-          stroke=url(#kGold) 
-          stroke-width=1.2 
-          stroke-dasharray=4 3 
-          opacity=0.6/>
+    <path d="M 35 9 L 57 19 L 57 45 L 35 59 L 13 45 L 13 19 Z" 
+          fill="none" 
+          stroke="url(#kGoldGrad)" 
+          stroke-width="1" 
+          stroke-dasharray="3 2" 
+          opacity="0.8"/>
 
     <!-- Stylized Modern 'K' Monogram -->
-    <!-- Stem -->
-    <path d=M 108 48 L 132 48 L 132 148 L 108 148 Z fill=url(#kAccent)/>
-    <!-- Upper Diagonal -->
-    <path d=M 132 102 L 175 48 L 205 48 L 152 110 Z fill=url(#kAccent)/>
-    <!-- Lower Diagonal -->
-    <path d=M 144 100 L 198 148 L 170 148 L 126 108 Z fill=url(#kAccent)/>
+    <!-- Vertical Spine -->
+    <path d="M 24 19 L 31 19 L 31 51 L 24 51 Z" fill="#ffffff"/>
+    <!-- Diagonal Upper Arm -->
+    <path d="M 31 33 L 44 19 L 52 19 L 36 36 Z" fill="url(#kGoldGrad)"/>
+    <!-- Diagonal Lower Arm -->
+    <path d="M 33 33 L 51 51 L 43 51 L 29 38 Z" fill="url(#kGoldGrad)"/>
 
-    <!-- Orbital Gold Dynamic Arc -->
-    <path d=M 22 108 C 50 162, 238 174, 268 96 C 242 118, 112 128, 35 105 Z 
-          fill=url(#kGold) 
-          opacity=0.95/>
-          
-    <!-- Star Accent at Apex -->
-    <polygon points=145,24 148,32 156,32 150,37 152,45 145,40 138,45 140,37 134,32 142,32 
-             fill=url(#kAccent)/>
-  </g>
-
-  <!-- Brand Typography: KALEEMULLAH -->
-  <text x=210 y=235 
-        text-anchor=middle 
-        font-family='Plus Jakarta Sans', system-ui, -apple-system, sans-serif 
-        font-size=24 
-        font-weight=900 
-        fill=#0f172a 
-        letter-spacing=2>
-    KALEEMULLAH
-  </text>
-
-  <!-- Subtitle: -- LLC -- -->
-  <g transform=translate(210, 264)>
-    <line x1=-70 y1=-5 x2=-25 y2=-5 stroke=#d97706 stroke-width=2.5 stroke-linecap=round/>
-    <text x=0 y=0 
-          text-anchor=middle 
-          font-family='Plus Jakarta Sans', system-ui, sans-serif 
-          font-size=15 
-          font-weight=800 
-          fill=#d97706 
-          letter-spacing=5>
-      LLC
-    </text>
-    <line x1=25 y1=-5 x2=70 y2=-5 stroke=#d97706 stroke-width=2.5 stroke-linecap=round/>
+    <!-- Apex Star Accent -->
+    <polygon points="35,11 36.5,15 40.5,15 37.2,17.5 38.5,21.5 35,19 31.5,21.5 32.8,17.5 29.5,15 33.5,15" fill="url(#kGoldGrad)"/>
   </g>
 </svg>
