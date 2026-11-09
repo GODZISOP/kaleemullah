@@ -18,12 +18,12 @@ export const siteConfig = {
   eyebrowStandard: "THE KALEEMULLAH STANDARD OF EXCELLENCE",
 
   // 📞 Phone, WhatsApp & Email
-  phonePrimary:    "(+966) 53 098 7507",       // Display phone on top nav
-  phonePrimaryTel: "+966530987507",          // Dial link (tel:...)
-  phoneDirect:     "(+966) 53 098 7507",        // Direct trade desk line
-  phoneDirectTel:  "+966530987507",          // Direct dial link
-  whatsappNumber:  "966530987507",            // Numbers only (country code + number)
-  whatsappDisplay: "(+966) 53 098 7507",
+  phonePrimary:    "(+966) 58 038 8938",       // Display phone on top nav
+  phonePrimaryTel: "+966580388938",          // Dial link (tel:...)
+  phoneDirect:     "(+966) 58 038 8938",        // Direct trade desk line
+  phoneDirectTel:  "+966580388938",          // Direct dial link
+  whatsappNumber:  "966580388938",            // Numbers only (country code + number)
+  whatsappDisplay: "(+966) 58 038 8938",
   email:           "info@kaleemullahllc.com",
   website:         "www.kaleemullahllc.com",
 
